@@ -6,7 +6,7 @@ namespace kolko_krzyzyk
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Witam witam!");
         }
     }
 }
