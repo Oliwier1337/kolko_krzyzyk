@@ -37,7 +37,7 @@ namespace Kolko_i_Krzyzyk
                 Console.WriteLine("\n");
 
                 Board();
-
+                Console.WriteLine("Podaj liczbę od 1 do 9: ");
                 choice = int.Parse(Console.ReadLine());  
 
                 if (arr[choice] != 'X' && arr[choice] != 'O')
