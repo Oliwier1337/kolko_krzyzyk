@@ -89,6 +89,7 @@ namespace Kolko_i_Krzyzyk
             Console.ReadLine();
         }
         
+        /* Plansza do gry */
         private static void Board()
         {
             Console.WriteLine("     |     |    ");
@@ -109,4 +110,12 @@ namespace Kolko_i_Krzyzyk
 
             Console.WriteLine("     |     |      ");
         }
-  
+        
+        /* Sprawdzanie czy któryś z graczy wygrał */
+        private static int CheckWin()
+        {
+            if (arr[1] == arr[2] && arr[2] == arr[3])
+                {
+                    return 1;
+                }
+        }
