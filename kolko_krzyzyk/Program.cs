@@ -1,24 +1,21 @@
 using System;
-
 using System.Threading;
 
 
 namespace Kolko_i_Krzyzyk
-
 {
-
-    class Program
-
+    class Game
     {
         static char[] arr = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
         static int player = 1;
-        static int choice; 
+        static int choice;
 
         static int flag = 0;
-        static void Main(string[] args)
 
+       
+        public void main()
         {
-
+            /* Zmienianie wartości na planszy */
             do
             {
                 Console.Clear();
@@ -38,7 +35,7 @@ namespace Kolko_i_Krzyzyk
 
                 Board();
                 Console.WriteLine("Podaj liczbę od 1 do 9: ");
-                choice = int.Parse(Console.ReadLine());  
+                choice = int.Parse(Console.ReadLine());
 
                 if (arr[choice] != 'X' && arr[choice] != 'O')
                 {
@@ -55,7 +52,8 @@ namespace Kolko_i_Krzyzyk
                     }
                 }
 
-                else 
+                /* Jeżeli pole na planszy jest zajęte */
+                else
                 {
                     Console.WriteLine("rząd {0} jest już zajęty przez: {1}", choice, arr[choice]);
 
@@ -76,7 +74,7 @@ namespace Kolko_i_Krzyzyk
             Board();
 
 
-            if (flag == 1)  
+            if (flag == 1)
             {
                 Console.WriteLine("Gracz {0} wygrał", (player % 2) + 1);
             }
@@ -89,7 +87,7 @@ namespace Kolko_i_Krzyzyk
             Console.ReadLine();
         }
 
-
+        /* Plansza do gry */
         private static void Board()
         {
             Console.WriteLine("     |     |    ");
@@ -110,7 +108,8 @@ namespace Kolko_i_Krzyzyk
 
             Console.WriteLine("     |     |      ");
         }
-  
+
+        /*Check win condition - sprawdzenie wygranej  */
         private static int CheckWin()
         {
             if (arr[1] == arr[2] && arr[2] == arr[3])
@@ -148,10 +147,6 @@ namespace Kolko_i_Krzyzyk
                 return 1;
             }
 
-
-
-
-
             else if (arr[1] == arr[5] && arr[5] == arr[9])
             {
                 return 1;
@@ -162,15 +157,10 @@ namespace Kolko_i_Krzyzyk
                 return 1;
             }
 
-
-
-
             else if (arr[1] != '1' && arr[2] != '2' && arr[3] != '3' && arr[4] != '4' && arr[5] != '5' && arr[6] != '6' && arr[7] != '7' && arr[8] != '8' && arr[9] != '9')
             {
                 return -1;
             }
-
-
 
             else
             {
@@ -178,7 +168,13 @@ namespace Kolko_i_Krzyzyk
             }
 
         }
-
     }
-
+    class Program
+    {
+    static void Main(string[] args)
+        {
+            Game gra = new Game();
+            gra.main();
+        }
+    }
 }
