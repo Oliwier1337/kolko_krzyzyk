@@ -4,6 +4,30 @@ using System.Threading;
 
 namespace Kolko_i_Krzyzyk
 {
+    /* Plansza do gry */
+    class Map
+    {
+        public void Board(char[] arr)
+        {
+            Console.WriteLine("     |     |    ");
+
+            Console.WriteLine("  {0}  |  {1}  |  {2}", arr[1], arr[2], arr[3]);
+
+            Console.WriteLine("_____|_____|_____ ");
+
+            Console.WriteLine("     |     |      ");
+
+            Console.WriteLine("  {0}  |  {1}  |  {2}", arr[4], arr[5], arr[6]);
+
+            Console.WriteLine("_____|_____|_____ ");
+
+            Console.WriteLine("     |     |      ");
+
+            Console.WriteLine("  {0}  |  {1}  |  {2}", arr[7], arr[8], arr[9]);
+
+            Console.WriteLine("     |     |      ");
+        }
+    }
     class Game
     {
         static char[] arr = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
@@ -11,7 +35,7 @@ namespace Kolko_i_Krzyzyk
         static int choice;
 
         static int flag = 0;
-
+        Map mapa = new Map();
        
         public void main()
         {
@@ -33,7 +57,7 @@ namespace Kolko_i_Krzyzyk
                 }
                 Console.WriteLine("\n");
 
-                Board();
+                mapa.Board(arr);
                 Console.WriteLine("Podaj liczbę od 1 do 9: ");
                 choice = int.Parse(Console.ReadLine());
 
@@ -71,7 +95,7 @@ namespace Kolko_i_Krzyzyk
 
             Console.Clear();
 
-            Board();
+            mapa.Board(arr);
 
 
             if (flag == 1)
@@ -87,27 +111,6 @@ namespace Kolko_i_Krzyzyk
             Console.ReadLine();
         }
 
-        /* Plansza do gry */
-        private static void Board()
-        {
-            Console.WriteLine("     |     |    ");
-
-            Console.WriteLine("  {0}  |  {1}  |  {2}", arr[1], arr[2], arr[3]);
-
-            Console.WriteLine("_____|_____|_____ ");
-
-            Console.WriteLine("     |     |      ");
-
-            Console.WriteLine("  {0}  |  {1}  |  {2}", arr[4], arr[5], arr[6]);
-
-            Console.WriteLine("_____|_____|_____ ");
-
-            Console.WriteLine("     |     |      ");
-
-            Console.WriteLine("  {0}  |  {1}  |  {2}", arr[7], arr[8], arr[9]);
-
-            Console.WriteLine("     |     |      ");
-        }
 
         /*Check win condition - sprawdzenie wygranej  */
         private static int CheckWin()
